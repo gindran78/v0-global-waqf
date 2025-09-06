@@ -46,19 +46,30 @@ export function DemoWallet() {
   const fetchWalletData = async () => {
     try {
       // Get or create demo wallet
-      let { data: walletData } = await supabase
+      let { data: walletData, error: walletError } = await supabase
         .from("demo_wallets")
         .select("*")
         .eq("user_session", "demo-user")
         .single()
 
-      if (!walletData) {
-        const { data: newWallet } = await supabase
+      if (!walletData && !walletError) {
+        const { data: newWallet, error: insertError } = await supabase
           .from("demo_wallets")
           .insert([{ user_session: "demo-user", balance: 1000 }])
           .select()
           .single()
+
+        if (insertError) {
+          console.error("Error creating wallet:", insertError)
+          return
+        }
+
         walletData = newWallet
+      }
+
+      if (!walletData || !walletData.id) {
+        console.error("No wallet data available")
+        return
       }
 
       setWallet(walletData)
