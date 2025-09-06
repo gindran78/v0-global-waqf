@@ -2,7 +2,7 @@ import Link from "next/link"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { CheckCircle, MapPin, Calendar, ArrowRight, Building } from "lucide-react"
+import { MapPin, Calendar, ArrowRight, Shield, Target } from "lucide-react"
 
 interface ProjectCardProps {
   project: {
@@ -61,7 +61,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           />
         ) : (
           <div className="w-full h-full flex items-center justify-center">
-            <Building className="h-12 w-12 text-muted-foreground" />
+            <Target className="h-12 w-12 text-muted-foreground" />
           </div>
         )}
         <Badge className={`absolute top-3 right-3`} variant={getStatusColor(project.status)}>
@@ -79,7 +79,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
               className="font-medium hover:text-foreground transition-colors flex items-center gap-1"
             >
               {project.institution.name}
-              {project.institution.verification_badge && <CheckCircle className="w-3 h-3" />}
+              {project.institution.verification_badge && <Shield className="w-3 h-3" />}
             </Link>
           </div>
         )}

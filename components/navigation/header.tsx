@@ -5,7 +5,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { Menu, Search, Globe, Heart, Users, BookOpen, Wallet } from "lucide-react"
+import { Menu, Search, Globe, HandHeart, Building2, GraduationCap, Coins } from "lucide-react"
 import { useAuth } from "@/components/auth/auth-provider"
 
 export function Header() {
@@ -13,10 +13,10 @@ export function Header() {
   const { user, signOut } = useAuth()
 
   const navigation = [
-    { name: "Institutions", href: "/institutions", icon: Users },
-    { name: "Projects", href: "/projects", icon: Heart },
-    { name: "Research", href: "/research", icon: BookOpen },
-    { name: "Demo Wallet", href: "/demo-wallet", icon: Wallet },
+    { name: "Institutions", href: "/institutions", icon: Building2 }, // Changed from Users to Building2 for institutions
+    { name: "Projects", href: "/projects", icon: HandHeart }, // Changed from Heart to HandHeart for charitable giving
+    { name: "Research", href: "/research", icon: GraduationCap }, // Changed from BookOpen to GraduationCap for academic research
+    { name: "Demo Wallet", href: "/demo-wallet", icon: Coins }, // Changed from Wallet to Coins for donations
   ]
 
   return (

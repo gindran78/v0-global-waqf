@@ -2,7 +2,7 @@ import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Calendar, Building, Globe, Lock, ArrowRight } from "lucide-react"
+import { Calendar, Building2, Globe, Lock, ArrowRight } from "lucide-react"
 import type { Document } from "@/lib/supabase"
 
 interface ResearchCardProps {
@@ -58,7 +58,7 @@ export function ResearchCard({ document }: ResearchCardProps) {
         <CardTitle className="text-lg leading-tight line-clamp-2">{document.title}</CardTitle>
 
         <div className="flex items-center gap-2 text-sm text-muted-foreground">
-          <Building className="w-4 h-4" />
+          <Building2 className="w-4 h-4" />
           <span className="truncate">{document.source_org}</span>
         </div>
 

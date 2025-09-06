@@ -8,15 +8,15 @@ import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import {
-  CheckCircle,
+  Shield,
   MapPin,
-  Building,
+  Building2,
   Globe,
   Mail,
   ArrowRight,
   Calendar,
-  TrendingUp,
-  FileText,
+  Target,
+  GraduationCap,
   MessageSquare,
 } from "lucide-react"
 import type { Institution, Project, Document } from "@/lib/supabase"
@@ -49,7 +49,7 @@ export function InstitutionProfile({ institution, projects, documents }: Institu
                     className="w-full h-full object-cover rounded-lg"
                   />
                 ) : (
-                  <Building className="h-12 w-12 text-muted-foreground" />
+                  <Building2 className="h-12 w-12 text-muted-foreground" />
                 )}
               </div>
 
@@ -60,7 +60,7 @@ export function InstitutionProfile({ institution, projects, documents }: Institu
                       <h1 className="text-3xl font-bold">{institution.name}</h1>
                       {institution.verification_badge && (
                         <Badge variant="secondary" className="flex items-center gap-1">
-                          <CheckCircle className="w-4 h-4" />
+                          <Shield className="w-4 h-4" />
                           Verified
                         </Badge>
                       )}
@@ -198,7 +198,7 @@ export function InstitutionProfile({ institution, projects, documents }: Institu
           {projects.length === 0 ? (
             <Card>
               <CardContent className="text-center py-12">
-                <TrendingUp className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
+                <Target className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
                 <h3 className="text-lg font-semibold mb-2">No Projects Yet</h3>
                 <p className="text-muted-foreground">This institution hasn't published any projects yet.</p>
               </CardContent>
@@ -249,7 +249,7 @@ export function InstitutionProfile({ institution, projects, documents }: Institu
           {documents.length === 0 ? (
             <Card>
               <CardContent className="text-center py-12">
-                <FileText className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
+                <GraduationCap className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
                 <h3 className="text-lg font-semibold mb-2">No Documents Available</h3>
                 <p className="text-muted-foreground">This institution hasn't published any research documents yet.</p>
               </CardContent>

@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { createBrowserClient } from "@supabase/ssr"
-import { Wallet, Plus, History, Info, CreditCard, ArrowUpRight, ArrowDownLeft } from "lucide-react"
+import { Plus, History, Info, ArrowUpRight, ArrowDownLeft, Coins, HandHeart } from "lucide-react"
 import { AddFundsDialog } from "./add-funds-dialog"
 import { ContributeDialog } from "./contribute-dialog"
 
@@ -123,7 +123,7 @@ export function DemoWallet() {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center">
-                <Wallet className="w-6 h-6 text-emerald-600" />
+                <Coins className="w-6 h-6 text-emerald-600" />
               </div>
               <div>
                 <CardTitle>Demo Wallet Balance</CardTitle>
@@ -148,7 +148,7 @@ export function DemoWallet() {
               disabled={!wallet?.balance || wallet.balance <= 0}
               className="flex items-center gap-2"
             >
-              <CreditCard className="w-4 h-4" />
+              <HandHeart className="w-4 h-4" />
               Make Contribution
             </Button>
           </div>

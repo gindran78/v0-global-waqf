@@ -6,7 +6,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { createBrowserClient } from "@supabase/ssr"
-import { Building2, FolderOpen, FileText, MessageSquare, CheckCircle, Clock, AlertCircle } from "lucide-react"
+import { Building2, Target, GraduationCap, MessageSquare, Shield, AlertCircle } from "lucide-react"
 
 interface DashboardStats {
   totalInstitutions: number
@@ -99,7 +99,7 @@ export function AdminDashboard() {
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Active Projects</CardTitle>
-            <FolderOpen className="h-4 w-4 text-muted-foreground" />
+            <Target className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{stats.activeProjects}</div>
@@ -110,7 +110,7 @@ export function AdminDashboard() {
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Research Documents</CardTitle>
-            <FileText className="h-4 w-4 text-muted-foreground" />
+            <GraduationCap className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{stats.totalDocuments}</div>
@@ -151,7 +151,7 @@ export function AdminDashboard() {
                   <p className="text-sm font-medium">Pending Approvals</p>
                   <div className="flex items-center gap-2">
                     <Badge variant="secondary" className="flex items-center gap-1">
-                      <Clock className="w-3 h-3" />
+                      <Shield className="w-3 h-3" />
                       {stats.pendingInstitutions} pending
                     </Badge>
                   </div>
@@ -174,7 +174,7 @@ export function AdminDashboard() {
                   <p className="text-sm font-medium">Project Status</p>
                   <div className="flex items-center gap-2">
                     <Badge variant="default" className="flex items-center gap-1">
-                      <CheckCircle className="w-3 h-3" />
+                      <Shield className="w-3 h-3" />
                       {stats.activeProjects} active
                     </Badge>
                     <Badge variant="secondary">{stats.totalProjects - stats.activeProjects} completed</Badge>
@@ -198,7 +198,7 @@ export function AdminDashboard() {
                   <p className="text-sm font-medium">Repository Status</p>
                   <div className="flex items-center gap-2">
                     <Badge variant="default" className="flex items-center gap-1">
-                      <FileText className="w-3 h-3" />
+                      <GraduationCap className="w-3 h-3" />
                       {stats.totalDocuments} documents
                     </Badge>
                   </div>

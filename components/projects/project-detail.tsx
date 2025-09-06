@@ -8,18 +8,17 @@ import { Button } from "@/components/ui/button"
 import { Progress } from "@/components/ui/progress"
 import { Separator } from "@/components/ui/separator"
 import {
-  CheckCircle,
   MapPin,
   Calendar,
   DollarSign,
   Target,
   TrendingUp,
-  FileText,
+  GraduationCap,
   ExternalLink,
   Mail,
   Globe,
-  Wallet,
-  Building,
+  Coins,
+  Shield,
 } from "lucide-react"
 import type { Document } from "@/lib/supabase"
 import { DemoContributionDialog } from "./demo-contribution-dialog"
@@ -115,7 +114,7 @@ export function ProjectDetail({ project, documents }: ProjectDetailProps) {
               />
             ) : (
               <div className="w-full h-full flex items-center justify-center">
-                <Building className="h-16 w-16 text-muted-foreground" />
+                <Target className="h-16 w-16 text-muted-foreground" />
               </div>
             )}
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
@@ -126,7 +125,7 @@ export function ProjectDetail({ project, documents }: ProjectDetailProps) {
                 </Badge>
                 {project.institution?.verification_badge && (
                   <Badge variant="secondary" className="bg-white/20 text-white border-white/30">
-                    <CheckCircle className="w-3 h-3 mr-1" />
+                    <Shield className="w-3 h-3 mr-1" />
                     Verified Institution
                   </Badge>
                 )}
@@ -233,7 +232,7 @@ export function ProjectDetail({ project, documents }: ProjectDetailProps) {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <FileText className="h-5 w-5" />
+                  <GraduationCap className="h-5 w-5" />
                   Related Documents
                 </CardTitle>
                 <CardDescription>Research papers and reports related to this project</CardDescription>
@@ -346,7 +345,7 @@ export function ProjectDetail({ project, documents }: ProjectDetailProps) {
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <Wallet className="h-5 w-5" />
+                <Coins className="h-5 w-5" />
                 Demo Contribution
               </CardTitle>
               <CardDescription>Try our demo contribution flow with test funds</CardDescription>

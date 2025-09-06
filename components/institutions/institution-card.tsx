@@ -2,7 +2,7 @@ import Link from "next/link"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { CheckCircle, MapPin, Building, ArrowRight } from "lucide-react"
+import { MapPin, Building2, ArrowRight, Shield } from "lucide-react"
 import type { Institution } from "@/lib/supabase"
 
 interface InstitutionCardProps {
@@ -22,7 +22,7 @@ export function InstitutionCard({ institution }: InstitutionCardProps) {
                 className="w-full h-full object-cover rounded-lg"
               />
             ) : (
-              <Building className="h-6 w-6 text-muted-foreground" />
+              <Building2 className="h-6 w-6 text-muted-foreground" />
             )}
           </div>
           <div className="flex-1 min-w-0">
@@ -30,7 +30,7 @@ export function InstitutionCard({ institution }: InstitutionCardProps) {
               <CardTitle className="text-lg leading-tight">{institution.name}</CardTitle>
               {institution.verification_badge && (
                 <Badge variant="secondary" className="text-xs flex-shrink-0">
-                  <CheckCircle className="w-3 h-3 mr-1" />
+                  <Shield className="w-3 h-3 mr-1" />
                   Verified
                 </Badge>
               )}
