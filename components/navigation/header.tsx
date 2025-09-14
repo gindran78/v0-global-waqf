@@ -5,7 +5,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { Menu, Search, Globe, HandHeart, Building2, GraduationCap, Coins } from "lucide-react"
+import { Menu, Search, Globe, MSquare as Mosque, Building2, BookOpen, Coins } from "lucide-react"
 import { useAuth } from "@/components/auth/auth-provider"
 
 export function Header() {
@@ -13,18 +13,18 @@ export function Header() {
   const { user, signOut } = useAuth()
 
   const navigation = [
-    { name: "Institutions", href: "/institutions", icon: Building2 }, // Changed from Users to Building2 for institutions
-    { name: "Projects", href: "/projects", icon: HandHeart }, // Changed from Heart to HandHeart for charitable giving
-    { name: "Research", href: "/research", icon: GraduationCap }, // Changed from BookOpen to GraduationCap for academic research
-    { name: "Demo Wallet", href: "/demo-wallet", icon: Coins }, // Changed from Wallet to Coins for donations
+    { name: "Institutions", href: "/institutions", icon: Mosque }, // Changed to Mosque for Islamic institutions
+    { name: "Projects", href: "/projects", icon: Building2 }, // Building2 for waqf projects
+    { name: "Research", href: "/research", icon: BookOpen }, // BookOpen for Islamic research
+    { name: "Demo Wallet", href: "/demo-wallet", icon: Coins }, // Coins for Islamic donations
   ]
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-white shadow-sm border-b border-border/20">
+    <header className="sticky top-0 z-50 w-full bg-white shadow-sm border-b border-border/20 islamic-pattern">
       <div className="container mx-auto flex h-16 items-center justify-between px-4 max-w-7xl">
         <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
           <Image src="/waqf-logo.png" alt="Global Waqf" width={40} height={40} className="h-10 w-10" />
-          <span className="text-xl font-bold text-foreground">Global Waqf</span>
+          <span className="text-xl font-bold text-foreground font-arabic">Global Waqf</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -35,7 +35,7 @@ export function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-300 group"
+                className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-300 group crescent-accent"
               >
                 <IconComponent className="h-4 w-4 group-hover:text-primary transition-colors" />
                 {item.name}
@@ -65,7 +65,7 @@ export function Header() {
               <Button variant="ghost" size="sm" asChild className="hover:bg-muted/50">
                 <Link href="/auth/signin">Sign In</Link>
               </Button>
-              <Button className="btn-primary shadow-sm hover:shadow-md transition-all" size="sm" asChild>
+              <Button className="btn-primary" size="sm" asChild>
                 <Link href="/onboard">Join Platform</Link>
               </Button>
             </div>
@@ -84,7 +84,7 @@ export function Header() {
             <div className="flex flex-col gap-6 pt-6">
               <div className="flex items-center gap-3">
                 <Image src="/waqf-logo.png" alt="Global Waqf" width={32} height={32} className="h-8 w-8" />
-                <span className="text-xl font-bold">Global Waqf</span>
+                <span className="text-xl font-bold font-arabic">Global Waqf</span>
               </div>
 
               <nav className="flex flex-col gap-4">
@@ -117,7 +117,7 @@ export function Header() {
                     <Button variant="ghost" asChild className="hover:bg-muted/50">
                       <Link href="/auth/signin">Sign In</Link>
                     </Button>
-                    <Button className="btn-primary shadow-sm" asChild>
+                    <Button className="btn-primary" asChild>
                       <Link href="/onboard">Join Platform</Link>
                     </Button>
                   </>
